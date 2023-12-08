@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { connect } from "react-redux";
 import { Location, NavLink, useLocation } from "react-router-dom";
 import { Dispatch } from "redux";
-import { DASHBOARD, USERS } from "../../routeConstants";
+import { DASHBOARD, MARQUES, USERS } from "../../routeConstants";
 import { hideSidebar, showSidebar } from "../../store/actions/system";
 import { RootState } from "../../store/reducers";
 
@@ -54,7 +54,7 @@ function SideBar({ sidebarOpen, hideSidebar }: HeaderProps) {
                 </div>
                 <NavLink end to="/" className="block">
                     <div className="flex content-center justify-center">
-                        <h1 className="font-bold text-amber-50 ml-2">QuizzTool BackOffice</h1>
+                        <h1 className="font-bold text-amber-50 ml-2">PrixVoiture BackOffice</h1>
                     </div>
                 </NavLink>
 
@@ -76,15 +76,15 @@ function SideBar({ sidebarOpen, hideSidebar }: HeaderProps) {
                                 </div>
                             </NavLink>
                         </li>
-                        <li className={`px-3 py-2 rounded-lg mb-0.5 last:mb-0 ${pathname == USERS && 'bg-main'}`}>
+                        <li className={`px-3 py-2 rounded-lg mb-0.5 last:mb-0 ${pathname == MARQUES && 'bg-main'}`}>
                             <NavLink
                                 end
-                                to="/dashboard/users"
-                                className={`block text-slate-200 truncate transition duration-150 ${pathname == USERS ? 'hover:text-slate-200' : 'hover:text-white'}`}
+                                to={MARQUES}
+                                className={`block text-slate-200 truncate transition duration-150 ${pathname == MARQUES ? 'hover:text-slate-200' : 'hover:text-white'}`}
                             >
                                 <div className="flex items-center">
                                     <span
-                                        className="text-white font-medium ml-3">Users List</span>
+                                        className="text-white font-medium ml-3">Marques</span>
                                 </div>
                             </NavLink>
                         </li>

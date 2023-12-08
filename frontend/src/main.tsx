@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import { Provider } from 'react-redux';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { DASHBOARD, LOGIN, PROFILE, REGISTER, } from './routeConstants.ts';
+import { DASHBOARD, LOGIN, MARQUES, PROFILE, REGISTER, } from './routeConstants.ts';
 import DashboardLayout from './layout/index.tsx';
 import store from './store/store.tsx';
 import LandingPage from './pages/Landing/index.tsx';
@@ -12,6 +12,7 @@ import Login from './pages/auth/Login.tsx';
 import AuthGard from './authProvider.tsx';
 import ProfilePage from './pages/profile.tsx';
 import Register from './pages/auth/Register.tsx';
+import Marquespage from './pages/marquespage.tsx';
 
 
 
@@ -34,6 +35,7 @@ const router = createBrowserRouter([
         children: [
           { path: DASHBOARD + "/", element: <DashboardMainOutlet /> },
           { path: PROFILE, element: <ProfilePage /> },
+          { path: MARQUES, element: <Marquespage /> },
         ]
       },
     ]

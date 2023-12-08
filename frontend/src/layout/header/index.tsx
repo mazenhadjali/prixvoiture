@@ -20,7 +20,7 @@ interface HeaderProps {
 
 
 
-function Header({ sidebarOpen, showSidebar, hideSidebar, removeUser, name, family_name, email }: HeaderProps) {
+function Header({ sidebarOpen, showSidebar, hideSidebar, removeUser, name, family_name }: HeaderProps) {
     console.log(family_name)
 
     const navigate = useNavigate();

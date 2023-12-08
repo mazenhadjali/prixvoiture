@@ -22,3 +22,7 @@ export const CHANGE_USER_ROLES = "api/v1/users/changeroles";
 
 export const UPDATE_SELF_USER_DETAILS = "api/v1/users/updateselfdetails"
 export const UPDATE_ANY_USER_DETAILS = "api/v1/users/updateuserdetails/{username}"
+
+
+export const GET_ALL_MARQUES = "marques";
+export const CREATEMARQUE = "marques/marque";
