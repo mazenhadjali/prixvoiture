@@ -13,8 +13,7 @@ import User from "../../interfaces/userInterface";
 import { BASEURL } from "../../Apis";
 
 interface Props {
-    username: string;
-    roles: string[];
+    email: string;
     firstname: string;
     lastname: string;
     token: string;
@@ -96,7 +95,7 @@ function Login(props: Partial<Props>) {
 
 const mapStateToProps = (state: RootState) => {
     return {
-        username: state.user.username,
+        username: state.user.email,
         accessToken: state.system.accessToken,
     };
 };

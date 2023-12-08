@@ -64,11 +64,26 @@ const selfidentify = async (req, res) => {
     try {
         const { password, ...otherDetails } = req.user._doc;
         res.status(200).json(otherDetails);
-        
+
     } catch (err) {
         res.status(500).send("Something went wrong ");
     }
 };
+const changemypassword = async (req, res) => {
+    try {
+        const salt = await bcrypt.genSalt(10); 
+        const hashedPassword = await bcrypt.hash(req.body.password, salt);
+
+        await UserModel.findByIdAndUpdate(req.user._id, {
+            password: hashedPassword 
+        });
+        res.status(200).json({ message: "Password changed successfully" });
+    } catch (err) {
+        res.status(500).json({ error: "Something went wrong" });
+    }
+};
+
+
 module.exports = {
-    login, register,selfidentify
+    login, register, selfidentify, changemypassword
 }

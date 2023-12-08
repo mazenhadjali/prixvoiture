@@ -9,14 +9,12 @@ interface userAction {
 
 
 const initialState: User = {
-    id: '',
-    firstname: '',
-    lastname: '',
-    dob: Date.now(),
-    tel: '',
-    email: '',
-    username: '',
-    roles: [],
+    _id: "",
+    name: "",
+    family_name: "",
+    nTel: "",
+    email: "",
+    isAdmin: false,
 };
 
 

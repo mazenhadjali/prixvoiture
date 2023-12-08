@@ -10,8 +10,9 @@ import { PROFILE } from "../../routeConstants";
 
 interface HeaderProps {
     sidebarOpen: boolean;
-    firstname: string;
-    lastname: string;
+    name: string;
+    family_name: string;
+    email: string;
     showSidebar: () => void;
     hideSidebar: () => void;
     removeUser: () => void;
@@ -19,7 +20,8 @@ interface HeaderProps {
 
 
 
-function Header({ sidebarOpen, showSidebar, hideSidebar, removeUser, firstname, lastname }: HeaderProps) {
+function Header({ sidebarOpen, showSidebar, hideSidebar, removeUser, name, family_name, email }: HeaderProps) {
+    console.log(family_name)
 
     const navigate = useNavigate();
 
@@ -57,7 +59,7 @@ function Header({ sidebarOpen, showSidebar, hideSidebar, removeUser, firstname, 
 
 
                     <div className="flex items-center justify-between min-w-[250px] border-2 p-1 rounded-full px-3">
-                        <span className="font-bold text-main"> {firstname} {lastname} </span>
+                        <span className="font-bold text-main"> {name} {family_name} </span>
                         <Link to={PROFILE} className="border-2 border-main bg-white hover:scale-110 p-2 rounded-full">
                             <svg width="20px" height="20px" version="1.1" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <g fill="none" fillRule="evenodd">
@@ -89,9 +91,9 @@ function Header({ sidebarOpen, showSidebar, hideSidebar, removeUser, firstname, 
 const mapStateToProps = (state: RootState) => {
     return {
         sidebarOpen: state.system.sidebarOpen,
-        username: state.user.username,
-        firstname: state.user.firstname,
-        lastname: state.user.lastname,
+        email: state.user.email,
+        name: state.user.name,
+        family_name: state.user.family_name,
         accessToken: state.system.accessToken,
     };
 };

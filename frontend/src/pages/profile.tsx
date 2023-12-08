@@ -20,8 +20,7 @@ function ProfilePage() {
     const handleChangePassword = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const passwordInput = event.currentTarget.password.value;
-        const currentPassword = event.currentTarget.currentPassword.value;
-        await axiosInstance.post(CHANGE_SELF_PASSWORD, { username: details?.username, password: passwordInput, currentPassword: currentPassword })
+        await axiosInstance.post(CHANGE_SELF_PASSWORD, { password: passwordInput })
             .then((response) => {
                 if (response.status === 200)
                     setpwdMessage({ status: true, message: "Password changed Successfully" });
@@ -65,37 +64,37 @@ function ProfilePage() {
                 <form onSubmit={handleChangeDetails} className="p-4">
                     <label className="block">
                         <span className="font-medium text-slate-700 pb-2">
-                            Username
+                            Email
                         </span>
                         <input
-                            type="username"
-                            name="username"
-                            id="username"
-                            defaultValue={details?.username}
+                            type="email"
+                            name="email"
+                            id="email"
+                            defaultValue={details?.email}
                             className="my-3 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" />
                     </label>
                     <label className="block">
                         <span className="font-medium text-slate-700 pb-2">
-                            First Name
+                            name
                         </span>
                         <input
                             type="text"
-                            name="firstname"
-                            id="firstname"
-                            defaultValue={details?.firstname}
+                            name="name"
+                            id="name"
+                            defaultValue={details?.name}
                             className="my-3 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
                         />
                     </label>
 
                     <label className="block">
                         <span className="font-medium text-slate-700 pb-2">
-                            Last Name
+                            Family Name
                         </span>
                         <input
                             type="text"
-                            name="lastname"
-                            id="lastname"
-                            defaultValue={details?.lastname}
+                            name="family_name"
+                            id="family_name"
+                            defaultValue={details?.family_name}
                             className="my-3 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
                         />
                     </label>
@@ -115,28 +114,23 @@ function ProfilePage() {
 
                     <label className="block">
                         <span className="font-medium text-slate-700 pb-2">
-                            Date of Birth
+                            Numero de Telephone
                         </span>
                         <input
-                            type="date"
-                            name="datenaissance"
-                            id="datenaissance"
-                            defaultValue={details?.dob ? new Date(details?.dob).toISOString().substring(0, 10) : ""}
+                            type="nTel"
+                            name="nTel"
+                            id="nTel"
+                            defaultValue={details?.nTel}
                             className="my-3 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
                         />
                     </label>
+
 
                     <div className="flex justify-end m-3">
                         <Button type="submit">Submit</Button>
                     </div>
                 </form>
 
-                {/* <p>
-                    <strong>Created On:</strong> {details?.createdOn?.toString()}
-                </p>
-                <p>
-                    <strong>Last Updated On:</strong> {details?.lastUpdatedOn?.toString()}
-                </p> */}
             </div>
             <div className="flex-1 max-w-[550px]">
                 <div className="bg-white p-8 m-2 rounded-xl shadow shadow-slate-300 min-w-[330px]">
@@ -151,10 +145,6 @@ function ProfilePage() {
                     }
                     <form onSubmit={handleChangePassword} className="mt-2">
                         <div className="flex flex-col space-y-5">
-                            <label htmlFor="password">
-                                <p className="font-medium text-slate-700 pb-2">Current Password</p>
-                                <input id="currentPassword" name="currentPassword" type="password" autoComplete="true" required className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow" placeholder="Current Password" />
-                            </label>
 
                             <label htmlFor="password">
                                 <p className="font-medium text-slate-700 pb-2">New Password</p>

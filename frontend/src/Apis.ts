@@ -17,7 +17,7 @@ export const GET_ROLE_BY_NAME = "api/v1/roles/{name}";
 
 
 export const CHANGE_ANY_USER_PASSWORD = "api/v1/users/changeuserpassword";
-export const CHANGE_SELF_PASSWORD = "api/v1/users/changeselfpassword";
+export const CHANGE_SELF_PASSWORD = "auth/changemypassword";
 export const CHANGE_USER_ROLES = "api/v1/users/changeroles";
 
 export const UPDATE_SELF_USER_DETAILS = "api/v1/users/updateselfdetails"

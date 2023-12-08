@@ -1,13 +1,9 @@
-import Role from "./roleInterface";
-
 interface User {
-  id: string;
-  firstname: string;
-  lastname: string;
-  dob: number;
-  tel: string;
+  _id: string;
+  name: string;
+  family_name: string;
+  nTel: string;
   email: string;
-  username: string;
-  roles: Role[];
+  isAdmin: boolean;
 }
 export default User;
