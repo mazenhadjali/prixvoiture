@@ -9,7 +9,8 @@ const schema = new mongoose.Schema(
         },
         optionparent: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'option'
+            ref: 'option',
+            default: null
         },
         nom: {
             type: String,
