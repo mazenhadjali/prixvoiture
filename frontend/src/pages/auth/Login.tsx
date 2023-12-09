@@ -6,7 +6,7 @@ import axios, { AxiosResponse } from "axios";
 import { NavigateFunction, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { setAccessToken } from "../../store/actions/system";
-import Button from "../../components/button";
+import logo from './../../assets/logo.png';
 import { useToast } from "../../toast/ToastProvider";
 import { DASHBOARD } from "../../routeConstants";
 import User from "../../interfaces/userInterface";
@@ -55,38 +55,38 @@ function Login(props: Partial<Props>) {
 
 
     return (
-        <div className="bg-third h-screen flex items-center justify-center">
-            <div className="p-5 bg-white border-2 border-second rounded-lg container max-w-lg flex-1 flex flex-col items-center justify-center text-white">
-                <div className="w-full text-center">
-                    <h1 className="text-6xl font-bold text-main mb-10" data-wow-delay="1s">Prix Voiture</h1>
-                    <h2 className="m-5 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900 text-main">Sign in to your account</h2>
-                </div>
+        <div className="body-bg h-screen flex-1" style={{ fontFamily: 'Lato ,sans-serif' }}>
+            <div className="max-w-lg mx-auto">
+                <img src={logo} alt="" />
+            </div>
 
-                <div className="p-5 w-full">
-                    {loginErr && (<div className="bg-red-100 border border-red-400 text-red-700 my-2 px-4 py-3 rounded" role="alert">
-                        <strong className="font-bold">Holy smokes!</strong>
-                        <span className="block sm:inline"> Please Check and enter valid Credentials !</span>
-                    </div>)}
-                    <form className="space-y-6" onSubmit={handleLogin}>
-                        <div>
-                            <label htmlFor="email" className="block text-sm text-main font-bold leading-6 text-gray-900">Username</label>
-                            <div className="mt-2">
-                                <input id="email" name="email" type="email" autoComplete="email" required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                            </div>
-                        </div>
+            <div className="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
+                <section>
+                    <h3 className="font-bold text-2xl">Welcome to PrixVoiture.tn</h3>
 
-                        <div>
-                            <label htmlFor="password" className="block text-sm text-main font-bold leading-6 text-gray-900">Password</label>
-                            <div className="mt-2">
-                                <input id="password" name="password" type="password" autoComplete="current-password" required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                            </div>
-                        </div>
+                    {
+                        (loginErr && <div className="mb-4 rounded-lg bg-red-100 px-6 py-5 text-base text-danger-700" role="alert">
+                            Please put Valid Credentials
+                        </div>) || <p className="text-gray-600 pt-2">Sign in to your account.</p>
+                    }
+                </section>
 
-                        <div>
-                            <Button type="submit" additionalClass={"w-full"}>Sign in</Button>
+                <section className="mt-10">
+                    <form className="flex flex-col" onSubmit={handleLogin}>
+                        <div className="mb-6 pt-3 rounded bg-gray-200">
+                            <label className="block text-gray-700 text-sm font-bold mb-2 ml-3" htmlFor="email">Email</label>
+                            <input required type="email" id="email" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3" />
                         </div>
+                        <div className="mb-6 pt-3 rounded bg-gray-200">
+                            <label className="block text-gray-700 text-sm font-bold mb-2 ml-3" htmlFor="password">Password</label>
+                            <input required type="password" id="password" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3" />
+                        </div>
+                        {/* <div className="flex justify-end">
+                            <a href="#" className="text-sm text-purple-600 hover:text-purple-700 hover:underline mb-6">Forgot your password?</a>
+                        </div> */}
+                        <button className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Sign In</button>
                     </form>
-                </div>
+                </section>
             </div>
         </div>
     );

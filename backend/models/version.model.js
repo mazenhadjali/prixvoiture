@@ -14,7 +14,7 @@ const schema = new mongoose.Schema(
       maxlength: 256
     },
     annee: {
-      type: String,
+      type: Number,
       required: true,
       maxlength: 5,
       minlength: 4

@@ -25,4 +25,13 @@ export const UPDATE_ANY_USER_DETAILS = "api/v1/users/updateuserdetails/{username
 
 
 export const GET_ALL_MARQUES = "marques";
+
+export const GET_ALL_MODELES = "modeles";
+export const GET_MODELE_BY_ID = "modeles/modele/:idModele";
 export const CREATEMARQUE = "marques/marque";
+export const CREATE_MODELE = "modeles/modele";
+
+
+export const GET_ALL_VERSIONS = "versions";
+export const GET_VERSION_BY_ID = "versions/version/:idVersion";
+export const CREATE_VERSION = "versions";

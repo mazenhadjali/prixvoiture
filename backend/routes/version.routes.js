@@ -5,7 +5,7 @@ const router = express.Router();
 const versionService = require('../services/version.services'); // Update the path to the location of your service file
 
 // Create a new Version
-router.post('/versions', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const version = await versionService.createVersion(req.body);
         res.status(201).json(version);

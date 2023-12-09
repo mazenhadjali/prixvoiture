@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { connect } from "react-redux";
 import { Location, NavLink, useLocation } from "react-router-dom";
 import { Dispatch } from "redux";
-import { DASHBOARD, MARQUES, USERS } from "../../routeConstants";
+import { DASHBOARD, MARQUES, MODELES, USERS } from "../../routeConstants";
 import { hideSidebar, showSidebar } from "../../store/actions/system";
 import { RootState } from "../../store/reducers";
 
@@ -85,6 +85,18 @@ function SideBar({ sidebarOpen, hideSidebar }: HeaderProps) {
                                 <div className="flex items-center">
                                     <span
                                         className="text-white font-medium ml-3">Marques</span>
+                                </div>
+                            </NavLink>
+                        </li>
+                        <li className={`px-3 py-2 rounded-lg mb-0.5 last:mb-0 ${pathname == MODELES && 'bg-main'}`}>
+                            <NavLink
+                                end
+                                to={MODELES}
+                                className={`block text-slate-200 truncate transition duration-150 ${pathname == MODELES ? 'hover:text-slate-200' : 'hover:text-white'}`}
+                            >
+                                <div className="flex items-center">
+                                    <span
+                                        className="text-white font-medium ml-3">Modeles</span>
                                 </div>
                             </NavLink>
                         </li>
