@@ -31,6 +31,9 @@ export const GET_MODELE_BY_ID = "modeles/modele/:idModele";
 export const CREATEMARQUE = "marques/marque";
 export const CREATE_MODELE = "modeles/modele";
 
+export const GET_FICHE_BY_ID_VERSION = "fichetechniques/:idVersion";
+export const GET_OPTIONS_BY_FICHE_ID = "options/fiche/:idFiche";
+
 
 export const GET_ALL_VERSIONS = "versions";
 export const GET_VERSION_BY_ID = "versions/version/:idVersion";

@@ -5,7 +5,7 @@ const router = express.Router();
 const optionService = require('../services/option.services'); // Update the path to where your Option service is located
 
 // Create a new Option
-router.post('/options', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const option = await optionService.createOption(req.body);
         res.status(201).json(option);
@@ -25,9 +25,9 @@ router.get('/options', async (req, res) => {
 });
 
 // Get an Option by ID
-router.get('/options/:id', async (req, res) => {
+router.get('/fiche/:id', async (req, res) => {
     try {
-        const option = await optionService.findOptionById(req.params.id);
+        const option = await optionService.findOptionsByIdfiche(req.params.id);
         res.status(200).json(option);
     } catch (error) {
         res.status(500).json({ message: 'Error fetching option', error });

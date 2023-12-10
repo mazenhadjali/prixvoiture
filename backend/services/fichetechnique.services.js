@@ -13,7 +13,7 @@ const findAllFichesTechniques = async () => {
 };
 
 const findFicheTechniqueById = async (id) => {
-    return FicheTechniqueModel.findById(id).populate('version');
+    return FicheTechniqueModel.findOne({ version: id }).populate('version');
 };
 
 const updateFicheTechnique = async (id, ficheTechniqueData) => {

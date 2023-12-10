@@ -13,6 +13,10 @@ const schema = new mongoose.Schema(
       minlength: 1,
       maxlength: 256
     },
+    prix: {
+      type: Number,
+      required: true,
+    },
     annee: {
       type: Number,
       required: true,

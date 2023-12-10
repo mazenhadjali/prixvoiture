@@ -11,8 +11,8 @@ const findAllOptions = async () => {
     return OptionModel.find().populate('fichetechnique optionparent');
 };
 
-const findOptionById = async (id) => {
-    return OptionModel.findById(id).populate('fichetechnique optionparent');
+const findOptionsByIdfiche = async (id) => {
+    return OptionModel.find({ fichetechnique: id, optionparent: null }).populate('fichetechnique optionparent');
 };
 
 const updateOption = async (id, optionData) => {
@@ -27,7 +27,7 @@ const deleteOption = async (id) => {
 module.exports = {
     createOption,
     findAllOptions,
-    findOptionById,
+    findOptionsByIdfiche,
     updateOption,
     deleteOption
 };

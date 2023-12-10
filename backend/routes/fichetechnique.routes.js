@@ -23,8 +23,8 @@ router.get('/fichetechniques', async (req, res) => {
     }
 });
 
-// Get a Fiche Technique by ID
-router.get('/fichetechniques/:id', async (req, res) => {
+// Get a Fiche Technique by ID version
+router.get('/:id', async (req, res) => {
     try {
         const ficheTechnique = await ficheTechniqueService.findFicheTechniqueById(req.params.id);
         res.status(200).json(ficheTechnique);

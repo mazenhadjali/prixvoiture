@@ -10,6 +10,7 @@ router.post('/', async (req, res) => {
         const version = await versionService.createVersion(req.body);
         res.status(201).json(version);
     } catch (error) {
+        console.log(error)
         res.status(500).json({ message: 'Error creating version', error });
     }
 });

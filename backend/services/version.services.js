@@ -1,11 +1,17 @@
 // VersionService.js
 
+const FicheTechniqueModel = require("../models/fichetechnique.model");
 const VersionModel = require("../models/version.model");
 
 
 const createVersion = async (versionData) => {
     const version = new VersionModel(versionData);
     await version.save();
+
+    // Create an instance of FicheTechniqueModel, set the version, and save it.
+    const ficheTechnique = new FicheTechniqueModel({ version: version._id });
+    await ficheTechnique.save();
+
     return version;
 };
 

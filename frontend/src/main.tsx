@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import { Provider } from 'react-redux';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { DASHBOARD, LOGIN, MARQUES, MODELE, MODELES, NEWMODEL, PROFILE, REGISTER, } from './routeConstants.ts';
+import { DASHBOARD, FICHE, LOGIN, MARQUES, MODELE, MODELES, NEWMODEL, PROFILE, REGISTER, } from './routeConstants.ts';
 import DashboardLayout from './layout/index.tsx';
 import store from './store/store.tsx';
 import LandingPage from './pages/Landing/index.tsx';
@@ -16,6 +16,7 @@ import Marquespage from './pages/marquespage.tsx';
 import Modelespage from './pages/modelespage.tsx';
 import NewModelepage from './pages/newmodel.tsx';
 import Modele from './pages/modele.tsx';
+import FicheTechnique from './pages/fichetechnique.tsx';
 
 
 
@@ -42,6 +43,7 @@ const router = createBrowserRouter([
           { path: MODELES, element: <Modelespage /> },
           { path: MODELE, element: <Modele /> },
           { path: NEWMODEL, element: <NewModelepage /> },
+          { path: FICHE, element: <FicheTechnique /> },
         ]
       },
     ]
