@@ -27,4 +27,5 @@ export const QUESTIONNAIREDETAILLE = "/typequestionnaire/detaille";
 
 export const QUESTIONNAIRESIMPLE_MARQUE = "/typequestionnaire/simple/:idMarque";
 export const QUESTIONNAIRESIMPLE_MARQUE_DETAILLE = "/typequestionnaire/simple/:idModele/detaille";
+export const RESULTAT_ESTIMATION = "/resultatestimation";
 

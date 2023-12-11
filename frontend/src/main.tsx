@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import { Provider } from 'react-redux';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { DASHBOARD, FICHE, LOGIN, MARQUES, MODELE, MODELES, NEWMODEL, PROFILE, QUESTIONNAIREAVANCEE, QUESTIONNAIREDETAILLE, QUESTIONNAIRESIMPLE, QUESTIONNAIRESIMPLE_MARQUE, QUESTIONNAIRESIMPLE_MARQUE_DETAILLE, REGISTER, TYPEQUESTIONNAIRE, } from './routeConstants.ts';
+import { DASHBOARD, FICHE, LOGIN, MARQUES, MODELE, MODELES, NEWMODEL, PROFILE, QUESTIONNAIREAVANCEE, QUESTIONNAIREDETAILLE, QUESTIONNAIRESIMPLE, QUESTIONNAIRESIMPLE_MARQUE, QUESTIONNAIRESIMPLE_MARQUE_DETAILLE, REGISTER, RESULTAT_ESTIMATION, TYPEQUESTIONNAIRE, } from './routeConstants.ts';
 import DashboardLayout from './layout/index.tsx';
 import store from './store/store.tsx';
 import LandingPage from './pages/Landing/index.tsx';
@@ -21,6 +21,7 @@ import TypeQuestionnaire from './pages/typeQuestionnaire.tsx';
 import QuestionnaireSimple from './pages/questionnaireSimple.tsx';
 import QuestionnaireSimpleMarque from './pages/questionnairesimplemarque.tsx';
 import QuestionnaireSimpleMarqueDetaille from './pages/questionnairesimplemarquedetaille.tsx';
+import ResultatEstimation from './pages/resultatEstimation.tsx';
 
 
 
@@ -80,6 +81,10 @@ const router = createBrowserRouter([
   {
     path: QUESTIONNAIRESIMPLE_MARQUE_DETAILLE,
     element: <QuestionnaireSimpleMarqueDetaille />,
+  },
+  {
+    path: RESULTAT_ESTIMATION,
+    element: <ResultatEstimation />,
   },
 ]);
 
