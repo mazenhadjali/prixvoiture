@@ -27,6 +27,15 @@ const findModeleById = async (id) => {
     return { ...modeleData, versions: versions };
 };
 
+const findModelesByIdMarque = async (id) => {
+    const response = await ModeleModel.find({ marque: id }).populate('marque');
+    if (!response) {
+        // Handle the case where the model is not found
+        return [];
+    }
+    return response;
+};
+
 const updateModele = async (id, modeleData) => {
     const updatedModele = await ModeleModel.findByIdAndUpdate(id, modeleData, { new: true });
     return updatedModele;
@@ -38,6 +47,7 @@ const deleteModele = async (id) => {
 };
 
 module.exports = {
+    findModelesByIdMarque,
     createModele,
     findAllModeles,
     findModeleById,

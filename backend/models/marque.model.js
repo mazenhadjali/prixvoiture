@@ -5,7 +5,7 @@ const schema = new mongoose.Schema(
     nom: {
       type: String,
       required: true,
-      minlength: 4,
+      minlength: 2,
       maxlength: 256
     },
 

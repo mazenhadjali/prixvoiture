@@ -19,6 +19,10 @@ const findAllVersions = async () => {
     return VersionModel.find().populate('modele');
 };
 
+const findAllVersionsbymodeleid = async (id) => {
+    return VersionModel.find({ modele: id }).populate('modele');
+};
+
 const findVersionById = async (id) => {
     return VersionModel.findById(id).populate('modele');
 };
@@ -33,6 +37,7 @@ const deleteVersion = async (id) => {
 };
 
 module.exports = {
+    findAllVersionsbymodeleid,
     createVersion,
     findAllVersions,
     findVersionById,

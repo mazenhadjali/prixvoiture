@@ -25,6 +25,18 @@ router.get('/versions', async (req, res) => {
     }
 });
 
+// Get all Versions by modele id
+router.get('/modele/:id', async (req, res) => {
+    try {
+        const versions = await versionService.findAllVersionsbymodeleid(req.params.id);
+        res.status(200).json(versions);
+    } catch (error) {
+        res.status(500).json({ message: 'Error fetching versions', error });
+    }
+});
+
+
+
 // Get Version by ID
 router.get('/versions/:id', async (req, res) => {
     try {

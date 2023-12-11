@@ -38,6 +38,18 @@ router.get('/modele/:id', async (req, res) => {
     }
 });
 
+// Get Modeles by ID Marque
+router.get('/marque/:id', async (req, res) => {
+    try {
+        const modele = await modeleService.findModelesByIdMarque(req.params.id);
+        res.status(200).json(modele);
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({ message: 'Error fetching modele', error });
+    }
+});
+
+
 // Update Modele by ID
 router.put('/modele/:id', async (req, res) => {
     try {

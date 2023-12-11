@@ -2,9 +2,11 @@ import { useRef } from "react";
 import { connect } from "react-redux";
 import { Location, NavLink, useLocation } from "react-router-dom";
 import { Dispatch } from "redux";
-import { DASHBOARD, MARQUES, MODELES, USERS } from "../../routeConstants";
+import { DASHBOARD, MARQUES, MODELES } from "../../routeConstants";
 import { hideSidebar, showSidebar } from "../../store/actions/system";
 import { RootState } from "../../store/reducers";
+import logo from './../../assets/logo.png';
+
 
 
 interface HeaderProps {
@@ -53,7 +55,8 @@ function SideBar({ sidebarOpen, hideSidebar }: HeaderProps) {
 
                 </div>
                 <NavLink end to="/" className="block">
-                    <div className="flex content-center justify-center">
+                    <div className="flex flex-wrap content-center justify-center">
+                        <img src={logo} alt="" />
                         <h1 className="font-bold text-amber-50 ml-2">PrixVoiture BackOffice</h1>
                     </div>
                 </NavLink>
