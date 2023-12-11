@@ -15,6 +15,7 @@ function QuestionnaireSimpleMarqueDetaille() {
             setVersions(response.data)
         })
     }, [])
+
     return (
         <body className="h-screen body-bg ">
             <section className="body-bg h-full dark:bg-gray-900 flex justify-center">
@@ -25,19 +26,27 @@ function QuestionnaireSimpleMarqueDetaille() {
 
                         <form className="flex flex-col" >
                             <div className="mb-6 pt-3 rounded bg-gray-200">
-                                <label className="block text-gray-700 text-sm font-bold mb-2 ml-3" htmlFor="email">Version</label>
+                                <label className="block text-gray-700 text-sm font-bold mb-2 ml-3" htmlFor="email">Version:</label>
                                 <select required id="email" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3" >
                                     {versions.map(version => (<option value={version._id}>{version.nom}</option>))}
                                 </select>
                             </div>
                             <div className="mb-6 pt-3 rounded bg-gray-200">
-                                <label className="block text-gray-700 text-sm font-bold mb-2 ml-3" htmlFor="password">Kilometrage:</label>
-                                <input required type="number" id="password" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3" />
+                                <label className="block text-gray-700 text-sm font-bold mb-2 ml-3" htmlFor="kilometrage">Kilometrage:</label>
+                                <input required type="number" id="kilometrage" name="kilometrage" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3" />
                             </div>
-                            {/* <div className="flex justify-end">
-                            <a href="#" className="text-sm text-purple-600 hover:text-purple-700 hover:underline mb-6">Forgot your password?</a>
-                        </div> */}
-                            <button className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Sign In</button>
+
+                            <div className="mb-6 pt-3 rounded bg-gray-200">
+                                <label className="block text-gray-700 text-sm font-bold mb-2 ml-3" htmlFor="mec">Mise En circulation:</label>
+                                <input required type="date" id="mec" name="mec" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3" />
+                            </div>
+                            <div className="mb-6 pt-3 rounded bg-gray-200">
+                                <label className="block text-gray-700 text-sm font-bold mb-2 ml-3" htmlFor="etat">Etat:</label>
+                                <select required id="etat" name="etat" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3" >
+                                    
+                                </select>
+                            </div>
+                            <button className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Estimer</button>
                         </form>
                     </div>
                     <div className="lg:mt-0 lg:col-span-5">
